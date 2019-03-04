@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  bot:
+    &bot
+    container_name: lockbot
+    build: .
+    environment:
+      - SLACK_API_TOKEN
+    command: slack-machine

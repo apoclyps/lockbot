@@ -30,15 +30,15 @@ docker-compose run bot
 
 Display's all available commands listed below:
 
-### list services
+#### list services
 
 Show a list of all known services.
 
-### lock `service-name`
+#### lock service
 
 Lock the service.
 
-### release `service-name`
+#### release service
 
 Release the deployments locks for the service.
 

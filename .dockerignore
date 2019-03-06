@@ -1,2 +1,4 @@
 !local_settings.py
 !plugins
+!Pipfile
+!Pipfile.lock

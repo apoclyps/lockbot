@@ -1,10 +1,13 @@
+import os
 import re
 
 from machine.plugins.base import MachineBasePlugin
 from machine.plugins.decorators import respond_to
-from machine.storage.backends.memory import MemoryStorage
+from machine.storage.backends.redis import RedisStorage
 
-memory_storage = MemoryStorage({})
+settings = {"REDIS_URL": os.getenv("REDIS_URL")}
+
+storage = RedisStorage(settings)
 
 
 class DeploymentPlugin(MachineBasePlugin):
@@ -13,11 +16,11 @@ class DeploymentPlugin(MachineBasePlugin):
     @respond_to(r"^lock$")
     def lock(self, msg):
         """lock: spread the lock"""
-        memory_storage.set("services", "locked")
+        storage.set("services", "locked")
         msg.say("Serviced locked")
 
     @respond_to(r"^release$")
     def release(self, msg):
         """release: spread the release"""
-        memory_storage.set("services", "locked")
+        storage.set("services", "locked")
         msg.say("Serviced released")

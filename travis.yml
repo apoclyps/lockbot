@@ -1,0 +1,21 @@
+sudo: required
+
+language: python
+
+services:
+  - docker
+
+install:
+  - echo "install nothing!"
+
+script:
+  - echo "no tests!"
+
+after_success:
+  - docker --version
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - eval $(aws ecr get-login --region eu-west-1)
+  - docker build -t lockbot .
+  - docker tag lockbot:latest ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/lockbot:latest
+  - docker push ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/lockbot:latest

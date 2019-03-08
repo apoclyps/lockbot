@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+
+language: python
+
+services:
+  - docker
+
+before_install:
+  - pip install awscli
+
+jobs:
+  include:
+  - stage: build and push ap docker image to aws ecr
+    script:
+      - eval $(aws ecr get-login --region eu-west-1 --no-include-email)
+      - docker build -t lockbot .
+      - docker tag lockbot:latest ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/lockbot:latest
+      - docker push ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/lockbot:latest

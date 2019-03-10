@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9762c460c8386fd9dac16cdaffc41b45983927ae3a95601ec72a00889c076c58"
+            "sha256": "ef242c3e02b46a1b0dd9501b382a26a65a817b8539d0538ebe851ee6159614ef"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -45,10 +45,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:47f9c83ef4c0c621eaef743f133f09fa8a74a9b75f037e8624f83bd1b6626cb7",
-                "sha256:993f830721089fef441cdfeb4b2c8c9df86f0c63239f06bd025a76a7daddb033"
+                "sha256:59b7658e26ca9c7339e00f8f4636cdfe59d34fa37b9b04f6f9e9926b3cece1a5",
+                "sha256:b26104d6835d1f5e49452a26eb2ff87fe7090b89dfcaee5ea2212697e1e1d7ae"
             ],
-            "version": "==2018.11.29"
+            "version": "==2019.3.9"
         },
         "chardet": {
             "hashes": [
@@ -65,9 +65,9 @@
         },
         "dill": {
             "hashes": [
-                "sha256:624dc244b94371bb2d6e7f40084228a2edfff02373fe20e018bef1ee92fdd5b3"
+                "sha256:f6d6046f9f9195206063dd0415dff185ad593d6ee8b0e67f12597c0f4df4986f"
             ],
-            "version": "==0.2.8.2"
+            "version": "==0.2.9"
         },
         "idna": {
             "hashes": [
@@ -106,9 +106,12 @@
             "version": "==1.12.0"
         },
         "slack-machine": {
-            "editable": true,
-            "git": "https://github.com/DandyDev/slack-machine.git",
-            "ref": "5512d2254e6c2b1ba491110f31c563881fb0df8d"
+            "hashes": [
+                "sha256:14c99c001283c71edb980202f4404e44c4df86d3ee63d2d4455f678c9d8b90f9",
+                "sha256:b88ca94cf1b9b404db4a8031d3d9b1293d9a5dfb81987c8e6fbdbfab6aa140c4"
+            ],
+            "index": "pypi",
+            "version": "==0.18.0"
         },
         "slackclient": {
             "hashes": [
